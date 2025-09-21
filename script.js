@@ -1,4 +1,3 @@
-// Product data
 const products = [
   { id: 1, name: "Product 1", price: 10 },
   { id: 2, name: "Product 2", price: 20 },
@@ -38,12 +37,7 @@ function renderProducts() {
 
 // Render cart list
 function renderCart() {
-  cartList.innerHTML = "";
-  if (cart.length === 0) {
-    cartList.innerHTML = "<li>Cart is empty</li>";
-    return;
-  }
-
+  cartList.innerHTML = ""; // completely clear
   cart.forEach((item) => {
     const li = document.createElement("li");
     li.textContent = `${item.name} - $${item.price}`;
@@ -79,4 +73,5 @@ clearCartBtn.addEventListener("click", clearCart);
 // Initial render
 renderProducts();
 renderCart();
+
 
